@@ -1,8 +1,0 @@
-type: AnalyzerGroup
-path: Sensors
-analyzers:
-  status:
-    type: GenericAnalyzer
-    path: Status
-    startswith: example7
-    num_items: 1

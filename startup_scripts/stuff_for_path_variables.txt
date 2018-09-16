@@ -1,0 +1,8 @@
+# Stuff to add to .bashrc
+
+# added by Miniconda3 3.16.0 installer
+export PATH="/home/robot1/miniconda3/bin:$PATH"
+export PATH="/home/robot1/arduino-1.8.4:$PATH"
+export PATH="/opt/ros/kinetic/bin:$PATH"
+
+source /opt/ros/kinetic/setup.bash

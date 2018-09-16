@@ -1,3 +1,4 @@
 # Not sure 
 
-catkin_init_workspace
+mkdir src
+catkin_make

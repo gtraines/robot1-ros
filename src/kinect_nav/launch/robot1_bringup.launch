@@ -15,11 +15,11 @@
 		
 	<node name="nox_controller" pkg="nox" type="nox_controller">
 		<param name="publish_tf" value="true" />
-    		<param name="publish_rate" value="10.0" />
-    		<param name="linear_scale_positive" value="1.025" />
-    		<param name="linear_scale_negative" value="1.025" />
-    		<param name="angular_scale_positive" value="1.078" />
-    		<param name="angular_scale_negative" value="1.078" />
+        <param name="publish_rate" value="10.0" />
+        <param name="linear_scale_positive" value="1.025" />
+        <param name="linear_scale_negative" value="1.025" />
+        <param name="angular_scale_positive" value="1.078" />
+        <param name="angular_scale_negative" value="1.078" />
 		<param name="angular_scale_accel" value="0.0" />
 	</node>	
 	

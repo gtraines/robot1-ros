@@ -77,7 +77,7 @@ void KinController::updateState() {
 }
 
 void KinController::updateDeltas() {
-    double dt = this->speed_dt;					//Time in s
+    double dt = this->speed_dt;	//Time in s
     this->_dxy = (this->speed_act_left+this->speed_act_right)*dt/2;
     this->_dth = ((this->speed_act_right-this->speed_act_left)*dt)/WHEELBASE_METERS;
     
@@ -204,11 +204,11 @@ void KinController::getOdometryMessage(ros::Time current_time, geometry_msgs::Qu
     
     double vx = (this->speed_dt == 0) 
         ?  0 
-        : (this->speed_act_left+this->speed_act_right)/2;
+        : (this->speed_act_left + this->speed_act_right)/2;
         
     double vth = (this->speed_dt == 0) 
         ? 0 
-        : (this->speed_act_right-this->speed_act_left)/WHEELBASE_METERS;
+        : (this->speed_act_right - this->speed_act_left)/WHEELBASE_METERS;
         
     odom_msg.child_frame_id = BASE_LINK;
     odom_msg.twist.twist.linear.x = vx;

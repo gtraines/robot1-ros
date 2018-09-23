@@ -91,10 +91,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="src/nox_controller.cpp"/>
     <File Name="src/ControllerConstants.h"/>
     <File Name="src/KinController.h"/>
     <File Name="src/KinController.cpp"/>
+    <File Name="src/kinect_nav.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="cfg">
     <File Name="cfg/rviz_slam_base_local_planner.rviz"/>
@@ -111,10 +111,10 @@
   </VirtualDirectory>
   <VirtualDirectory Name="launch">
     <File Name="launch/slam.launch"/>
-    <File Name="launch/nox_navigation.launch"/>
-    <File Name="launch/nox_slam_pi.launch"/>
-    <File Name="launch/nox_rgbd_slam.launch"/>
-    <File Name="launch/nox_slam.launch"/>
-    <File Name="launch/nox_bringup.launch"/>
+    <File Name="launch/robot1_navigation.launch"/>
+    <File Name="launch/robot1_bringup.launch"/>
+    <File Name="launch/robot1_rgbd_slam.launch"/>
+    <File Name="launch/robot1_slam.launch"/>
+    <File Name="launch/robot1_slam_pi.launch"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -4,10 +4,9 @@
 #include <geometry_msgs/Vector3.h>
 #include <stdio.h>
 #include <cmath>
+#include "KinController.h"
+#include "ControllerConstants.h"
 
-double radius = 0.04;                              //Wheel radius, in m
-double wheelbase = 0.187;                          //Wheelbase, in m
-double two_pi = 6.28319;
 double speed_act_left = 0.0;
 double speed_act_right = 0.0;
 double speed_req1 = 0.0;
@@ -19,49 +18,12 @@ double theta = 0.0;
 ros::Time current_time;
 ros::Time speed_time(0.0);
 
-void handle_speed( const geometry_msgs::Vector3Stamped& speed) {
-  speed_act_left = trunc(speed.vector.x*100)/100;
-  ROS_INFO("speed left : %f", speed_act_left);
-  speed_act_right = trunc(speed.vector.y*100)/100;
-  ROS_INFO("speed right : %f", speed_act_right);
-  speed_dt = speed.vector.z;
-  speed_time = speed.header.stamp;
-}
 
 int main(int argc, char** argv){
-  ros::init(argc, argv, "nox_controller");
-
-  ros::NodeHandle n;
-  ros::NodeHandle nh_private_("~");
-  ros::Subscriber sub = n.subscribe("speed", 50, handle_speed);
-  ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
-  tf::TransformBroadcaster broadcaster;  
+    ros::init(argc, argv, "nox_controller");
   
-  double rate = 10.0;
-  double linear_scale_positive = 1.0;
-  double linear_scale_negative = 1.0;
-  double angular_scale_positive = 1.0;
-  double angular_scale_negative = 1.0;
-  bool publish_tf = true;
-  double dt = 0.0;
-  double dx = 0.0;
-  double dy = 0.0;
-  double dth = 0.0;
-  double dxy = 0.0;
-  double vx = 0.0;
-  double vy = 0.0;
-  double vth = 0.0;
-  char base_link[] = "/base_link";
-  char odom[] = "/odom";
-  char kinect[] = "/kinect";
-  char camera_link[] = "/camera_link";
-  ros::Duration d(1.0);
-  nh_private_.getParam("publish_rate", rate);
-  nh_private_.getParam("publish_tf", publish_tf);
-  nh_private_.getParam("linear_scale_positive", linear_scale_positive);
-  nh_private_.getParam("linear_scale_negative", linear_scale_negative);
-  nh_private_.getParam("angular_scale_positive", angular_scale_positive);
-  nh_private_.getParam("angular_scale_negative", angular_scale_negative);
+    bool publish_tf = true;
+    KinController kCtrl(publish_tf);
 
   ros::Rate r(rate);
   while(n.ok()){
@@ -71,7 +33,7 @@ int main(int argc, char** argv){
     ROS_INFO("dt : %f", dt);
     dxy = (speed_act_left+speed_act_right)*dt/2;
     ROS_INFO("dxy : %f", dxy);
-    dth = ((speed_act_right-speed_act_left)*dt)/wheelbase;
+    dth = ((speed_act_right-speed_act_left)*dt)/WHEELBASE_METERS;
 
     if (dth > 0) dth *= angular_scale_positive;
     if (dth < 0) dth *= angular_scale_negative;
@@ -85,11 +47,11 @@ int main(int argc, char** argv){
     y_pos += (sin(theta) * dx + cos(theta) * dy);
     theta += dth;
 
-    if(theta >= two_pi) theta -= two_pi;
-    if(theta <= -two_pi) theta += two_pi;
+    if(theta >= TWO_PI) theta -= TWO_PI;
+    if(theta <= -TWO_PI) theta += TWO_PI;
 
     geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(theta);
-    geometry_msgs::Quaternion empty_quat = tf::createQuaternionMsgFromYaw(0);
+    geometry_msgs::Quaternion empty_quat = ;
 
     if(publish_tf) {
       geometry_msgs::TransformStamped t;
@@ -155,7 +117,7 @@ int main(int argc, char** argv){
       odom_msg.twist.covariance[35] = 1e3;
     }
     vx = (dt == 0)?  0 : (speed_act_left+speed_act_right)/2;
-    vth = (dt == 0)? 0 : (speed_act_right-speed_act_left)/wheelbase;
+    vth = (dt == 0)? 0 : (speed_act_right-speed_act_left)/WHEELBASE_METERS;
     odom_msg.child_frame_id = base_link;
     odom_msg.twist.twist.linear.x = vx;
     odom_msg.twist.twist.linear.y = 0.0;

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # create_pkg_lang.sh rospy NAME
 
-./create_pkg_lang.sh rospy $1
+./create_pkg_lang.sh rospy $@

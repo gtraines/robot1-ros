@@ -1,14 +1,17 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # catkin_create_pkg --rosdistro Kinetic {1} dependencies rospy
-echo "$(tput setab 2)$(tput setaf 0) Creating package ${2} $(tput sgr0) \n"
+
+args=("$@")
+dependency_arr=${args[*]:2}
+
+echo "$(tput setab 2)$(tput setaf 0) Creating package ${2} $(tput sgr0)"
 cd $PWD/src/
-catkin_create_pkg --rosdistro Kinetic -m graham.traines -l MIT $2 dependencies std_msgs $1
+catkin_create_pkg --rosdistro Kinetic -m graham.traines -l MIT $2 std_msgs message_generation message_runtime $1 ${dependency_arr}
 
+echo "$(tput setaf 2) Created package ${2} $(tput sgr0)"
+echo "$(tput bold) Current dependencies: $(tput sgr0)"
 
-echo "\n $(tput setaf 2)Created package ${2} $(tput sgr0)"
-echo "\n $(tput bold)Current dependencies:$(tput sgr0)"
-
-rospack depends1 $2
+#rospack depends1 $2
 cd .. 
 
 # this is a hack block comment
@@ -56,6 +59,25 @@ catkin_create_pkg [-h] [--meta] [-s [SYS_DEPS [SYS_DEPS ...]]]
 	tput rev     # Turn on reverse video mode
 	tput smso    # Enter standout (bold) mode
 	tput rmso    # Exit standout mode
+
+
+	#╔═════════════════╦════════════════════════════════════════╗
+	#║ Syntax          ║ Result                                 ║
+	#╠═════════════════╬════════════════════════════════════════╣
+	#║ arr=()          ║ Create empty array                     ║
+	#║ arr=(1 2 3)     ║ Initialize array                       ║
+	#║ ${arr[2]}       ║ Retrieve third element                 ║
+	#║ ${arr[@]}       ║ Retrieve all elements                  ║
+	#║ ${!arr[@]}      ║ Retrieve array indices                 ║
+	#║ ${#arr[@]}      ║ Calculate array size                   ║
+	#║ arr[0]=3        ║ Overwrite 1st element                  ║
+	#║ arr+=(4)        ║ Append value(s)                        ║
+	#║ str=$(ls)       ║ Save ls output as string               ║
+	##║ arr=( $(ls) )   ║ Save ls output as array of files       ║
+	#║ ${arr[@]:s:n}   ║ Elements at indices n to s+n           ║
+	#║ ${str//ab/c}    ║ For a given string, replace ab with c  ║
+	#║ ${arr[@]//ab/c} ║ For each array item, replace ab with c ║
+	#╚═════════════════╩════════════════════════════════════════╝
 
 fi
 

@@ -117,4 +117,10 @@
     <File Name="launch/robot1_slam.launch"/>
     <File Name="launch/robot1_slam_pi.launch"/>
   </VirtualDirectory>
+  <VirtualDirectory Name="kinect_nav">
+    <File Name="CMakeLists.txt"/>
+    <File Name="package.xml"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

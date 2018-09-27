@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="robot1_ros" Database="">
-  <Project Name="kinect_nav" Path="src/kinect_nav/kinect_nav.project" Active="Yes"/>
+  <Project Name="robot1_chassis_description" Path="src/robot1_chassis_description/robot1_chassis_description.project" Active="No"/>
+  <Project Name="kinect_nav" Path="src/kinect_nav/kinect_nav.project" Active="No"/>
+  <Project Name="robot1_chassis" Path="src/robot1_chassis/robot1_chassis.project" Active="Yes"/>
+  <Project Name="robot1_chassis_gazebo" Path="src/robot1_chassis_gazebo/robot1_chassis_gazebo.project" Active="No"/>
+  <Project Name="turret_test1" Path="src/turret_test1/turret_test1.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
+      <Project Name="robot1_chassis_description" ConfigName="Debug"/>
       <Project Name="kinect_nav" ConfigName="Debug"/>
+      <Project Name="robot1_chassis" ConfigName="Debug"/>
+      <Project Name="robot1_chassis_gazebo" ConfigName="Debug"/>
+      <Project Name="turret_test1" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
+      <Project Name="robot1_chassis_description" ConfigName="Release"/>
       <Project Name="kinect_nav" ConfigName="Release"/>
+      <Project Name="robot1_chassis" ConfigName="Release"/>
+      <Project Name="robot1_chassis_gazebo" ConfigName="Release"/>
+      <Project Name="turret_test1" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

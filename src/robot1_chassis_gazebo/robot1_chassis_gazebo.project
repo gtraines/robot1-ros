@@ -90,9 +90,7 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="src">
-    <File Name="main.c"/>
-  </VirtualDirectory>
+  <VirtualDirectory Name="src"/>
   <VirtualDirectory Name="robot1_chassis_gazebo">
     <File Name="epydoc.config"/>
     <File Name="CMakeLists.txt"/>
@@ -104,7 +102,7 @@
     <File Name="config/em_3905_ackermann_ctrlr_params.yaml"/>
   </VirtualDirectory>
   <VirtualDirectory Name="launch">
-    <File Name="launch/ackermann_vehicle.launch"/>
+    <File Name="launch/robot1_chassis.launch"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

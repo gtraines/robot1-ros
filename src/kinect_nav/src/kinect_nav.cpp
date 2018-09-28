@@ -9,7 +9,7 @@
 
 
 int main(int argc, char** argv){
-    ros::init(argc, argv, "nox_controller");
+    ros::init(argc, argv, "kinect_nav_controller");
   
     bool publish_tf = true;
     KinController kCtrl(publish_tf);

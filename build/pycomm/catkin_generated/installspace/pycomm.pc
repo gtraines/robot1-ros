@@ -1,0 +1,8 @@
+prefix=/home/robot1/robot1-ros/install
+
+Name: pycomm
+Description: Description of pycomm
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot1/robot1-ros/install/lib 
+Requires: 

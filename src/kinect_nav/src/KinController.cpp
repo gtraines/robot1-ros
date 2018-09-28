@@ -15,7 +15,7 @@ KinController::KinController() {
     this->initializeNode();
 }
 
-KinController::KinController(bool publishTransform) : this() {
+KinController::KinController(bool publishTransform) : KinController::KinController() {
     this->_publishTransform = publishTransform;
 }
 
@@ -25,7 +25,7 @@ KinController::~KinController() {
 }
 
 void KinController::initializeNode() {
-    this->_duration(1.0);
+    this->_duration = ;
     this->speed_time = new ros::Time(0.0);   
     this->configurePubSub();
     this->updateParameters();

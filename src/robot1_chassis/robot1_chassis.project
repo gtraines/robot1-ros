@@ -90,9 +90,6 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="src">
-    <File Name="main.c"/>
-  </VirtualDirectory>
   <VirtualDirectory Name="robot1_chassis">
     <File Name="CMakeLists.txt"/>
     <File Name="package.xml"/>

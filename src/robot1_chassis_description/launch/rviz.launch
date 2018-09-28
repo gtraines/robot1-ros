@@ -24,6 +24,6 @@ limitations under the License.
 -->
 
 <launch>
-  <arg name="namespace" default="ackermann_vehicle"/>
+  <arg name="namespace" default="robot1_chassis"/>
   <node name="rviz" pkg="rviz" type="rviz" ns="$(arg namespace)"/>
 </launch>

@@ -13,6 +13,7 @@ class KinController
 {
 public:
     KinController();
+	KinController(bool publishTransform);
     ~KinController();
     bool statusOk();
     void spinOnce();

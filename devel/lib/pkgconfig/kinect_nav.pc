@@ -1,0 +1,8 @@
+prefix=/home/robot1/robot1-ros/devel
+
+Name: kinect_nav
+Description: Description of kinect_nav
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot1/robot1-ros/devel/lib 
+Requires: 

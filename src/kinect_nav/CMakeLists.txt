@@ -119,13 +119,14 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
 # include
+	src/
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/nox.cpp
-# )
+#add_library(${PROJECT_NAME}
+#   src/${PROJECT_NAME}/kinect_nav.cpp
+#)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -200,5 +201,5 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(nox_controller src/nox_controller.cpp)
-target_link_libraries(nox_controller ${catkin_LIBRARIES})
+add_executable(kinect_nav src/KinController.cpp src/kinect_nav.cpp)
+target_link_libraries(kinect_nav ${catkin_LIBRARIES})

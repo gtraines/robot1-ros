@@ -2,7 +2,7 @@
 				<!--  ************** Odometry ***************  -->
 	<arg name="gui" default="True" />
 	<param name="use_gui" value="$(arg gui)"/>
-	<param name="robot_description" command="cat $(find nox_description)/urdf/nox.urdf" />
+	<param name="robot_description" command="cat $(find robot1_chassis_description)/urdf/nox.urdf" />
 	
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	
@@ -23,10 +23,10 @@
 		<param name="angular_scale_accel" value="0.0" />
 	</node>	
 	
-				<!--  ************** Sensors ***************  -->
+				<!--  ************** Sensors *************** 
 	<include file="$(find freenect_launch)/launch/freenect.launch" />
 	<node name="depthimage_to_laserscan" pkg="depthimage_to_laserscan" type="depthimage_to_laserscan">
 		<remap from="image" to="camera/depth/image_raw" />
 	</node>
-	
+	 -->
 </launch>

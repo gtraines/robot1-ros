@@ -92,8 +92,8 @@
   </Settings>
   <VirtualDirectory Name="launch">
     <File Name="launch/rviz.launch"/>
-    <File Name="launch/ackermann_vehicle_rviz.launch"/>
-    <File Name="launch/ackermann_vehicle.launch"/>
+    <File Name="launch/robot1_chassis.launch"/>
+    <File Name="launch/robot1_chassis_rviz.launch"/>
   </VirtualDirectory>
   <VirtualDirectory Name="urdf">
     <File Name="urdf/em_3905.urdf.xacro"/>

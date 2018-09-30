@@ -2,7 +2,7 @@
 				<!--  ************** Odometry ***************  -->
 	<arg name="gui" default="True" />
 	<param name="use_gui" value="$(arg gui)"/>
-	<param name="robot_description" command="cat $(find robot1_chassis_description)/urdf/nox.urdf" />
+	<param name="robot_description" command="cat $(find robot1_chassis_description)/urdf/em_3905.urdf.xacro" />
 	
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 	
@@ -10,10 +10,10 @@
 	
 	<node name="serial_node" pkg="rosserial_python" type="serial_node.py">
 		<param name="port" value="/dev/ttyACM0"/>
-		<output="screen"/>
+		<param name="output" value="screen"/>
 	</node>
 		
-	<node name="nox_controller" pkg="nox" type="nox_controller">
+	<node name="kinect_nav" pkg="kinect_nav" type="kinect_nav">
 		<param name="publish_tf" value="true" />
         <param name="publish_rate" value="10.0" />
         <param name="linear_scale_positive" value="1.025" />

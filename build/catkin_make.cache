@@ -1,0 +1,2 @@
+kinect_nav:pycomm:robot1_chassis:robot1_chassis_description:robot1_chassis_gazebo:turret_test1
+-DCATKIN_DEVEL_PREFIX=/home/robot1/robot1-ros/devel -DCMAKE_INSTALL_PREFIX=/home/robot1/robot1-ros/install -G Unix Makefiles

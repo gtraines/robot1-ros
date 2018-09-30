@@ -1,0 +1,8 @@
+prefix=/home/robot1/robot1-ros/install
+
+Name: robot1_chassis_description
+Description: Description of robot1_chassis_description
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/robot1/robot1-ros/install/lib 
+Requires: 

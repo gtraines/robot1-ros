@@ -1,0 +1,3 @@
+rostopic list
+rostopic info
+

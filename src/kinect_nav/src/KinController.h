@@ -15,28 +15,25 @@ public:
     KinController();
 	KinController(bool publishTransform);
     ~KinController();
+    void initializeNode();
     bool statusOk();
     void spinOnce();
     
-    void initializeNode();
-
     void updateState();
     bool broadcastUpdatedState();
-    
-    void updateVector(const geometry_msgs::Vector3Stamped& speed);
-    
+
     ros::NodeHandle* ctrlNodeHandle;
     ros::Time current_time;
-    ros::Time* speed_time;
     
-    double speed_act_left = 0.0;
-    double speed_act_right = 0.0;
-    double speed_req1 = 0.0;
-    double speed_req2 = 0.0;
-    double speed_dt = 0.0;
-    double x_pos = 0.0;
-    double y_pos = 0.0;
-    double theta = 0.0;
+    
+    static void updateVector(const geometry_msgs::Vector3Stamped& speed);
+    static ros::Time* speed_time;
+    static double speed_act_left;
+    static double speed_act_right;
+    static double speed_dt;
+    static double x_pos;
+    static double y_pos;
+    static double theta;
 
 private:
     void updateDeltas();
@@ -45,12 +42,10 @@ private:
     void updateParameters();
     void configurePubSub();
 
-    void getOdometryMessage(ros::Time current_time, geometry_msgs::Quaternion odometryQuaternion);
-    void broadcastTransform(ros::Time current_time, 
-        geometry_msgs::Quaternion odometryQuaternion);
-    geometry_msgs::TransformStamped* getKinectTransform(ros::Time current_time);
-    geometry_msgs::TransformStamped* getChassisTransform(ros::Time current_time, 
-            geometry_msgs::Quaternion odometryQuaternion);
+    nav_msgs::Odometry getOdometryMessage(ros::Time current_time, geometry_msgs::Quaternion odometryQuaternion);
+    void broadcastTransform(ros::Time current_time, geometry_msgs::Quaternion odometryQuaternion);
+    geometry_msgs::TransformStamped getKinectTransform(ros::Time current_time);
+    geometry_msgs::TransformStamped getChassisTransform(ros::Time current_time, geometry_msgs::Quaternion odometryQuaternion);
     
     tf::TransformBroadcaster* _broadcaster;
     ros::Duration* _duration;

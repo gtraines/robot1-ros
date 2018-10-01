@@ -1,8 +1,8 @@
-prefix=/home/robot1/robot1-ros/devel
+prefix=/home/graham/Source/robot1-ros/devel
 
 Name: robot1_chassis_description
 Description: Description of robot1_chassis_description
 Version: 0.1.0
 Cflags: 
-Libs: -L/home/robot1/robot1-ros/devel/lib 
+Libs: -L/home/graham/Source/robot1-ros/devel/lib 
 Requires: 

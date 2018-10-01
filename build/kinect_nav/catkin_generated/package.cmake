@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "kinect_nav")
 set(kinect_nav_VERSION "0.0.0")
-set(kinect_nav_MAINTAINER "hal <hal@todo.todo>")
+set(kinect_nav_MAINTAINER "hal <gtraines@todo.todo>")
 set(kinect_nav_PACKAGE_FORMAT "2")
 set(kinect_nav_BUILD_DEPENDS "robot1_chassis_description" "roscpp" "rospy" "teb_local_planner")
 set(kinect_nav_BUILD_EXPORT_DEPENDS "robot1_chassis_description" "roscpp" "rospy" "teb_local_planner")

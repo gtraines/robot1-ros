@@ -1,8 +1,8 @@
-prefix=/home/robot1/robot1-ros/install
+prefix=/home/graham/Source/robot1-ros/install
 
 Name: robot1_chassis_gazebo
 Description: Description of robot1_chassis_gazebo
 Version: 0.1.0
 Cflags: 
-Libs: -L/home/robot1/robot1-ros/install/lib 
+Libs: -L/home/graham/Source/robot1-ros/install/lib 
 Requires: 

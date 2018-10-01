@@ -1,5 +1,0 @@
-# start ROS instance
-
-roscore
-
-

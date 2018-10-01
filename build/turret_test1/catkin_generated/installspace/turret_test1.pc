@@ -1,8 +1,8 @@
-prefix=/home/robot1/robot1-ros/install
+prefix=/home/graham/Source/robot1-ros/install
 
 Name: turret_test1
 Description: Description of turret_test1
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/robot1/robot1-ros/install/lib 
+Libs: -L/home/graham/Source/robot1-ros/install/lib 
 Requires: roscpp rospy std_msgs message_generation

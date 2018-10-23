@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+chmod +x install_ros/add_repo_sources.sh
+chmod +x install_ros/install_reqd_pkgs.sh
+chmod +x install_ros/install_ros_desktop.sh
+chmod +x startup_scripts/add_ros_to_bashrc.sh
+chmod +x startup_scripts/install_ros_pkgs.sh
+chmod +x startup_scripts/list_current_running_nodes.sh
+chmod +x startup_scripts/start_ros.sh
 chmod +x build_ws.sh
 chmod +x use_ws.sh
 chmod +x start_nodes.sh

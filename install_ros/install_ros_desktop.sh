@@ -1,5 +1,5 @@
-sudo apt-get update -y && \
-sudo apt-get install ros-kinetic-desktop-full -y && \
+sudo apt-get update -y
+sudo apt-get install ros-kinetic-desktop-full -y
 sudo rosdep init
 rosdep update
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc

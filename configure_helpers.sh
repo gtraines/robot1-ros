@@ -3,6 +3,7 @@
 chmod +x install_ros/add_repo_sources.sh
 chmod +x install_ros/install_reqd_pkgs.sh
 chmod +x install_ros/install_ros_desktop.sh
+chmod +x install_ros/install_ros_complete.sh
 chmod +x startup_scripts/add_ros_to_bashrc.sh
 chmod +x startup_scripts/install_ros_pkgs.sh
 chmod +x startup_scripts/list_current_running_nodes.sh
